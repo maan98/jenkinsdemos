@@ -12,8 +12,8 @@ public class MyController {
 	}
 	
 	//updated by another developer
-	@GetMapping("/hi1")
-	public String sayHello() {
+	@GetMapping("/hi")
+	public String sayHi() {
 		return "Hi from the controller";
 	}
 
