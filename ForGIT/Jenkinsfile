@@ -4,23 +4,17 @@ pipeline {
         stage('Build') { 
             steps {
                 //git 'https://github.com/maan98/jenkinsdemos.git'
-                bat 'mvn -B compile'
+                sh 'mvn -B compile'
             }
         }
          stage('Test') { 
             steps {
-                bat 'mvn test'
-            }
-            post{
-                always{
-                    junit 'target/surefire-reports/*.xml'
-                }
+                sh 'mvn test'
             }
         }
         stage('Package') { 
             steps {
-                bat 'mvn package'
-                archiveArtifacts 'target/*.jar'
+                sh 'mvn package'
             }
         }
     }
